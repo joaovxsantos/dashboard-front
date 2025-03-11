@@ -1,0 +1,33 @@
+.side-bar-container {
+
+    width: 100vw;
+    height: 100vh;
+
+    @media screen and (max-width: 480px) {
+        width: 75vw;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    ul {
+        list-style: none;
+
+
+        li {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 20px 0px;
+
+
+            &:first-of-type {
+                background: #000;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
