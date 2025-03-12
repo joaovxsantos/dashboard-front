@@ -1,5 +1,5 @@
 import useIsMobile from "../../hooks/isMobile"
-import SideBarMobile from "./SidebarMobile";
+import SideBarMobile from "./mobile/SidebarMobile";
 import styles from './Sidebar.module.scss'
 
 export default function SideBar() {
@@ -8,16 +8,7 @@ export default function SideBar() {
 
     return (
         <div className={styles["side-bar-container"]}>
-            <SideBarMobile />
+            {isMobile? <SideBarMobile /> : 'side desk'}
         </div>
-        // <div className="side-bar-container">
-        //         {/* {isMobile? 'aaa' : 'bbb'}
-        //         <div className="side-bar-top">
-
-        //         </div>
-        //         <div className="side-bar-bottom">
-
-        //         </div> */}
-        // </div>
     )
 }
