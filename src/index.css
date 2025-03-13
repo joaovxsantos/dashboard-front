@@ -9,14 +9,14 @@
   --primary: #007bff;
   --box-shadow-color:#0000004d;
 }
-
+/* 
 #root {
   display: flex;
 
   @media screen and (max-width:480px) {
     flex-direction: column;
 }
-}
+} */
 
 * {
   margin: 0;

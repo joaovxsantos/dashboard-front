@@ -9,7 +9,7 @@ export function CardList() {
 
             {
                 dataDashBoard.map((data, index) => {
-                    return (
+                    return (    
                         <Card key={index} title={data.title} subtitle={data.subtitle} icon={data.icon} content={data.content} />
                     )
                 })

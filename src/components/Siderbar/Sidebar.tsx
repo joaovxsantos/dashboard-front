@@ -7,6 +7,8 @@ export default function SideBar() {
 
     const isMobile = useIsMobile();
 
+   
+
     return (
         <div className={styles["side-bar-container"]}>
             {isMobile ? <SideBarMobile /> : <SideBarDesk />}

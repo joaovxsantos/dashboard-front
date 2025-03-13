@@ -1,5 +1,5 @@
 import { BoxIcon, HomeIcon, Users, ShoppingBag, Settings, X, Menu } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from './SidebarMobile.module.scss';
 import clsx from "clsx"
 
@@ -8,6 +8,15 @@ import clsx from "clsx"
 export default function SideBarMobile() {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, [isOpen])
 
     return (
         <header className={!isOpen ? styles["header-close"] : undefined}>

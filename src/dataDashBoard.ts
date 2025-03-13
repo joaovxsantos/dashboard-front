@@ -35,8 +35,7 @@ export const dataDashBoard: dataDash[] = [
   },
   {
     title: "Overview vendas",
-    icon: DollarSign,
-    content: "graph",
+    icon: DollarSign
   },
   {
     title: "Ultimos clientes",

@@ -1,6 +1,7 @@
 .card-container {
     width: calc(25% - 20px);
     min-width: 300px !important;
+    max-width: 100vw;
     height: 170px;
     padding: 25px 20px;
     display: flex;
@@ -9,15 +10,31 @@
     box-shadow: 0 0 5px var(--box-shadow-color);
     border-radius: 5px;
 
+
+    &.graph {
+        width: 700px;
+        justify-content: start;
+        height: 450px;
+    }
+
     .card-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .head-titles {
-            h2 {
+            h3 {
                 margin: 5px 0;
             }
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
         }
     }
 }

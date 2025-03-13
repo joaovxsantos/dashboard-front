@@ -2,11 +2,7 @@
     width: 60px;
     padding: 30px 17px;
     box-shadow: 0 0 5px var(--box-shadow-color);
-    position: relative;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    // align-items: center;
+    position: absolute;
 
 
     ul {
@@ -15,7 +11,7 @@
         flex-direction: column;
         gap: 20px;
 
-        
+
 
     }
 
