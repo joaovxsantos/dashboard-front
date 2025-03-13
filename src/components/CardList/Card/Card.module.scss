@@ -1,0 +1,23 @@
+.card-container {
+    width: calc(25% - 20px);
+    min-width: 300px !important;
+    height: 170px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 5px var(--box-shadow-color);
+    border-radius: 5px;
+
+    .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .head-titles {
+            h2 {
+                margin: 5px 0;
+            }
+        }
+    }
+}

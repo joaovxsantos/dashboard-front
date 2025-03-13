@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --black: #000;
   --white: #fff;
@@ -8,9 +10,17 @@
   --box-shadow-color:#0000004d;
 }
 
+#root {
+  display: flex;
+
+  @media screen and (max-width:480px) {
+    flex-direction: column;
+}
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }

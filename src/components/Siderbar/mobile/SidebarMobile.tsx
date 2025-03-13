@@ -1,7 +1,7 @@
-import { BoxIcon, HomeIcon, Users, ShoppingBag, Settings, X, Menu } from "lucide-react"
+import { BoxIcon, HomeIcon, Users, ShoppingBag, Settings, X, Menu } from "lucide-react";
 import { useState } from "react";
-import styles from './SidebarMobile.module.scss'
-import clsx from "clsx";
+import styles from './SidebarMobile.module.scss';
+import clsx from "clsx"
 
 
 
