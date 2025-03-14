@@ -1,0 +1,20 @@
+.info-user {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+
+    @media screen and (max-width:480px) {
+        &:first-of-type {
+            margin-top: 50px;
+        }
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+}

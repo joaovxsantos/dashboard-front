@@ -7,7 +7,7 @@ export function ApexChart() {
 
         series: [{
             name: 'Vendas',
-            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            data: [1, 2, 3, 4, 5, 6, 7, 2.3, 1, 5, 2, 3]
         }],
         options: {
             chart: {
@@ -72,16 +72,7 @@ export function ApexChart() {
                     formatter: (val: number) => `${val}%`
                 }
 
-            },
-            title: {
-                text: 'Grafico de vendas do ano de 2025',
-                floating: true,
-                offsetY: 330,
-                align: 'center' as const,
-                style: {
-                    color: '#444'
-                }
-            },
+            }
         },
 
 
@@ -90,7 +81,7 @@ export function ApexChart() {
     return (
         <div>
             <div id="chart">
-                <ReactApexChart options={state.options} series={state.series} type="area" />
+                <ReactApexChart options={state.options} series={state.series} type="bar" height={400} />
             </div>
             <div id="html-dist">
 

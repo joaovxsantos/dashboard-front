@@ -1,4 +1,5 @@
 import type { dataDash } from "../types";
+import { CardUser } from "./components/CardUser/CardUser";
 
 import {
   DollarSign,
@@ -35,12 +36,12 @@ export const dataDashBoard: dataDash[] = [
   },
   {
     title: "Overview vendas",
-    icon: DollarSign
+    icon: DollarSign,
   },
   {
     title: "Ultimos clientes",
     subtitle: "Novos clientes nas últimas 24horas",
     icon: CircleDollarSign,
-    content: "card clientes",
+    content: CardUser,
   },
 ];

@@ -7,6 +7,8 @@ import clsx from "clsx"
 
 export function Card({ title, subtitle, icon, content }: dataDash) {
 
+    console.log(typeof content);
+
     return (
         <div className={clsx(styles["card-container"], !content && styles.graph)}>
             <div className={styles["card-head"]}>
@@ -17,9 +19,7 @@ export function Card({ title, subtitle, icon, content }: dataDash) {
                 {React.createElement(icon)}
             </div>
             <div className={styles["card-content"]}>
-                {content ? <h4>
-                    {content}
-                </h4> :<ApexChart />}
+                {!content ? <ApexChart /> : typeof content === 'string' ? <h4>{content}</h4> : React.createElement(content)}
             </div>
         </div>
     )
