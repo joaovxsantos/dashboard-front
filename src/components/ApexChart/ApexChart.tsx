@@ -3,22 +3,25 @@ import ReactApexChart from "react-apexcharts";
 
 
 export function ApexChart() {
-    const [state, setState] = React.useState({
+    const [state] = React.useState({
 
         series: [{
-            name: 'Inflation',
-            data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+            name: 'Vendas',
+            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         }],
         options: {
             chart: {
+                toolbar: {
+                    show: false
+                },
                 height: 350,
-                type: 'bar' as const,
+                type: 'area' as const,
             },
             plotOptions: {
                 bar: {
                     borderRadius: 10,
                     dataLabels: {
-                        position: 'top', // top, center, bottom
+                        position: 'top'
                     },
                 }
             },
@@ -34,7 +37,7 @@ export function ApexChart() {
 
             xaxis: {
                 categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Aug", "Set", "Out", "Nov", "Dez"],
-                position: 'top',
+                position: 'bottom',
                 axisBorder: {
                     show: false
                 },
@@ -78,7 +81,7 @@ export function ApexChart() {
                 style: {
                     color: '#444'
                 }
-            }
+            },
         },
 
 
@@ -87,7 +90,7 @@ export function ApexChart() {
     return (
         <div>
             <div id="chart">
-                <ReactApexChart options={state.options} series={state.series} type="bar" width={600} height={350} />
+                <ReactApexChart options={state.options} series={state.series} type="area" />
             </div>
             <div id="html-dist">
 
