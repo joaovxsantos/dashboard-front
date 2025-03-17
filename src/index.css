@@ -9,18 +9,21 @@
   --primary: #007bff;
   --box-shadow-color:#0000004d;
 }
-/* 
-#root {
-  display: flex;
-
-  @media screen and (max-width:480px) {
-    flex-direction: column;
-}
-} */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+}
+
+
+body {
+  background:#fff !important;
+  color:#000 !important;
+}
+
+body.darkMode {   
+  background:#000 !important;
+  color: #fff !important;
 }

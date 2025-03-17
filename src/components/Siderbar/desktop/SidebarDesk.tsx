@@ -1,5 +1,6 @@
-import { BoxIcon, HomeIcon, Users, ShoppingBag, Settings, ChartLine } from "lucide-react";
+import { BoxIcon, HomeIcon, Users, ShoppingBag, ChartLine } from "lucide-react";
 import styles from './SideBarDesk.module.scss'
+import { ThemeToggle } from "../../ThemeToggle/ThemeToggle";
 
 export function SideBarDesk() {
     return (
@@ -27,7 +28,8 @@ export function SideBarDesk() {
                         </li>
                     </ul>
                 </nav>
-                <Settings className={styles["settings-icon"]} />
+                {/* <Settings className={styles["settings-icon"]} /> */}
+                <ThemeToggle/>
             </header>
         </>
     )
