@@ -1,6 +1,6 @@
 import useIsMobile from "../../hooks/isMobile";
-import SideBarMobile from "./mobile/SideBarMobile";
-import { SideBarDesk } from "./desktop/SideBarDesk";
+import SideBarMobile from "./mobile/SidebarMobile";
+import { SideBarDesk } from "./desktop/SidebarDesk";
 import styles from './Sidebar.module.scss'
 
 export default function SideBar() {

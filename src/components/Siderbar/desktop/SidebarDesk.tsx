@@ -1,6 +1,7 @@
 import { BoxIcon, HomeIcon, Users, ShoppingBag, ChartLine } from "lucide-react";
 import styles from './SideBarDesk.module.scss'
-import { ThemeToggle } from "../../ThemeToggle/ThemeToggle";
+// import { ThemeToggle } from "../../ThemeProvider/ThemeContext";
+import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 
 export function SideBarDesk() {
     return (
@@ -28,8 +29,7 @@ export function SideBarDesk() {
                         </li>
                     </ul>
                 </nav>
-                {/* <Settings className={styles["settings-icon"]} /> */}
-                <ThemeToggle/>
+                <DarkModeToggle className={styles["toggle-btn"]}/>
             </header>
         </>
     )
