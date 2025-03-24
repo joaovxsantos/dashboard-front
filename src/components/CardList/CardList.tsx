@@ -2,7 +2,6 @@ import { dataDashBoard } from '../../dataDashBoard'
 import { Card } from './Card/Card'
 
 
-
 export function CardList() {
     return (
         <>
@@ -10,7 +9,8 @@ export function CardList() {
             {
                 dataDashBoard.map((data, index) => {
                     return (
-                        <Card key={index} title={data.title} subtitle={data.subtitle} icon={data.icon} content={data.content} />
+                        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                        <Card key={index} index={index} title={data.title} subtitle={data.subtitle} icon={data.icon} content={data.content} />
                     )
                 })
             }

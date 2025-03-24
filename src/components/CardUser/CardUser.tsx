@@ -1,34 +1,23 @@
 import styles from './CardUser.module.scss'
-import { User } from 'lucide-react'
-
-export function CardUser() {
-
-    const users = [
-        {
-            id: 0,
-            name: "Nome do usuário",
-            email: "usuario@email.com"
-        },
-        {
-            id: 1,
-            name: "Nome do usuário 2",
-            email: "usuario2@email.com"
-        }
-    ]
+import type { User } from '../../../types'
+import { UserIcon } from 'lucide-react'
 
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export function CardUser({ users }: { users: any }) {
     return (
         <div className={styles["card-user"]}>
-
-            {users.map(user => (
-                <div className={styles["info-user"]} key={user.id}>
-                    <User />
-                    <div>
-                        <h4>{user.name}</h4>
-                        <span>{user.email}</span>
+            {
+                Array.isArray(users) ? users.map((user: User) => (
+                    <div className={styles["info-user"]} key={user.id}>
+                        <UserIcon />
+                        <div>
+                            <h4>{user.name}</h4>
+                            <span>{user.email}</span>
+                        </div>
                     </div>
-                </div>
-            ))}
+                )) : 'No users available'
+            }
         </div>
     )
 }

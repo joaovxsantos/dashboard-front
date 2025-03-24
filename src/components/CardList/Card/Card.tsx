@@ -1,13 +1,27 @@
-import React from "react";
-import type { dataDash } from "../../../../types";
-import styles from './Card.module.scss'
+import React, { useEffect, useState } from "react";
+import type { dataDash, Order, User } from "../../../../types";
+import styles from './Card.module.scss';
 import { ApexChart } from "../../ApexChart/ApexChart";
-import clsx from "clsx"
+import clsx from "clsx";
+import { CardUser } from "../../CardUser/CardUser";
 
 
-export function Card({ title, subtitle, icon, content }: dataDash) {
+export function Card({ title, subtitle, icon, content, index }: dataDash) {
+    const [contentRequest, setContentRequest] = useState<User[] | Order[] | string>("Carregando...");
 
-    console.log(typeof content);
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    useEffect(() => {
+        const getContent = async () => {
+            if (typeof content === "function") {
+                const data = await content();
+                setContentRequest(Array.isArray(data) ? data : [data])
+            } else {
+                setContentRequest(content);
+            }
+        };
+
+        getContent();
+    }, []);
 
     return (
         <div className={clsx(styles["card-container"], !content && styles.graph)}>
@@ -19,7 +33,13 @@ export function Card({ title, subtitle, icon, content }: dataDash) {
                 {React.createElement(icon)}
             </div>
             <div className={styles["card-content"]}>
-                {!content ? <ApexChart /> : typeof content === 'string' ? <h4>{content}</h4> : React.createElement(content)}
+                {content ?
+                    index !== 0 && index !== 5 ?
+                        contentRequest.length
+                        : index === 0 ?
+                            Array.isArray(contentRequest) ? contentRequest.filter((content): content is Order => 'sale' in content && content.sale).length : 0 :
+                            <CardUser users={contentRequest} /> : <ApexChart />
+                }
             </div>
         </div>
     )

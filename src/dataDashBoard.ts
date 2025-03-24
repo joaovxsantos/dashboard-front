@@ -1,5 +1,6 @@
 import type { dataDash } from "../types";
-import { CardUser } from "./components/CardUser/CardUser";
+import { orderService } from "./api/orderService";
+import { useService } from "./api/userService";
 
 import {
   DollarSign,
@@ -14,25 +15,41 @@ export const dataDashBoard: dataDash[] = [
     title: "Total vendas",
     subtitle: "Total vendas em 30 dias",
     icon: DollarSign,
-    content: "R$ 100.000,00",
+    type: "order",
+    content: async () => {
+      const response = await orderService.getOrdersMonth();
+      return response;
+    },
   },
   {
     title: "Novos clientes",
     subtitle: "Novos clientes em 30 dias",
     icon: Users,
-    content: "R$ 100.000,00",
+    type: "user",
+    content: async () => {
+      const response = await useService.getUsersMonth();
+      return response;
+    },
   },
   {
     title: "Pedidos hoje",
     subtitle: "Total pedidos hoje",
     icon: Percent,
-    content: "65",
+    type: "order",
+    content: async () => {
+      const response = await orderService.getOrdersDay();
+      return response;
+    },
   },
   {
     title: "Total pedidos",
     subtitle: "Total pedidos 30 dias",
     icon: Receipt,
-    content: "235",
+    type: "order",
+    content: async () => {
+      const response = await orderService.getOrdersMonth();
+      return response;
+    },
   },
   {
     title: "Overview vendas",
@@ -42,6 +59,10 @@ export const dataDashBoard: dataDash[] = [
     title: "Ultimos clientes",
     subtitle: "Novos clientes nas últimas 24horas",
     icon: CircleDollarSign,
-    content: CardUser,
+    type: "user",
+    content: async () => {
+      const response = await useService.getUsersDay();
+      return response;
+    },
   },
 ];
