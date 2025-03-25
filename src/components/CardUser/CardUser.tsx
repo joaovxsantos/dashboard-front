@@ -2,9 +2,11 @@ import styles from './CardUser.module.scss'
 import type { User } from '../../../types'
 import { UserIcon } from 'lucide-react'
 
+interface CardUsersProps {
+    users: string | object
+}
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function CardUser({ users }: { users: any }) {
+export function CardUser({ users }: CardUsersProps) {
     return (
         <div className={styles["card-user"]}>
             {

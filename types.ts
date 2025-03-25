@@ -1,5 +1,4 @@
 import type { ElementType } from "react";
-// import type React from "react";
 
 export type dataDash = {
   title: string;
@@ -7,8 +6,7 @@ export type dataDash = {
   icon: ElementType;
   type?: string;
   index?: number;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  content?: any;
+  content?: string | ((user: User) => User[]);
 };
 
 export type User = {

@@ -9,19 +9,19 @@ import { CardUser } from "../../CardUser/CardUser";
 export function Card({ title, subtitle, icon, content, index }: dataDash) {
     const [contentRequest, setContentRequest] = useState<User[] | Order[] | string>("Carregando...");
 
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
     useEffect(() => {
         const getContent = async () => {
             if (typeof content === "function") {
-                const data = await content();
+                const data = await content({} as User);
                 setContentRequest(Array.isArray(data) ? data : [data])
             } else {
-                setContentRequest(content);
+                if (content) {
+                    setContentRequest(content);
+                }
             }
         };
-
         getContent();
-    }, []);
+    }, [content]);
 
     return (
         <div className={clsx(styles["card-container"], !content && styles.graph)}>
@@ -43,5 +43,4 @@ export function Card({ title, subtitle, icon, content, index }: dataDash) {
             </div>
         </div>
     )
-
 }

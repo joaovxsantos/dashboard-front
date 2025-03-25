@@ -1,6 +1,5 @@
 import { BoxIcon, HomeIcon, Users, ShoppingBag, ChartLine } from "lucide-react";
 import styles from './SideBarDesk.module.scss'
-// import { ThemeToggle } from "../../ThemeProvider/ThemeContext";
 import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 
 export function SideBarDesk() {
