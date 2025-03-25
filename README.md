@@ -1,54 +1,114 @@
-# React + TypeScript + Vite
+# DashBoard Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de dashboard desenvolvido com **React**, **TypeScript** e **Vite**. Ele utiliza diversas bibliotecas modernas para criar uma interface de usuário responsiva e funcional, com suporte a gráficos, alternância de tema (modo claro/escuro) e componentes reutilizáveis.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Vite**: Ferramenta de build rápida e moderna.
+- **ApexCharts**: Biblioteca para criação de gráficos interativos.
+- **Axios**: Cliente HTTP para comunicação com APIs.
+- **Lucide-React**: Conjunto de ícones SVG para React.
+- **SCSS**: Pré-processador CSS para estilização.
 
-## Expanding the ESLint configuration
+## Estrutura do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A estrutura do projeto é organizada da seguinte forma:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── public/
+│   └── dashboard-icon.png
+├── src/
+│   ├── api/            # Serviços para comunicação com a API
+│   ├── components/     # Componentes reutilizáveis
+│   ├── hooks/          # Hooks personalizados
+│   ├── styles/         # Estilos globais e específicos
+│   ├── App.tsx         # Componente principal da aplicação
+│   ├── main.tsx        # Ponto de entrada da aplicação
+│   └── index.css       # Estilos globais
+├── index.html          # Arquivo HTML principal
+├── types.ts            # Tipos TypeScript utilizados no projeto
+├── vite.config.ts      # Configuração do Vite
+└── package.json        # Dependências e scripts do projeto
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Estrutura do `index.html`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O arquivo `index.html` é o ponto de entrada da aplicação e está configurado da seguinte forma:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/dashboard-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DashBoard</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
 ```
+
+## Funcionalidades
+
+- **Gráficos Interativos**: Utilizando a biblioteca ApexCharts para exibir dados de vendas e pedidos.
+- **Modo Escuro/Claro**: Alternância de tema com persistência no `localStorage`.
+- **Responsividade**: Interface adaptada para dispositivos móveis e desktops.
+- **Componentização**: Componentes reutilizáveis para facilitar a manutenção e expansão do projeto.
+
+## Scripts Disponíveis
+
+No arquivo `package.json`, você encontrará os seguintes scripts:
+
+- `dev`: Inicia o servidor de desenvolvimento.
+- `build`: Realiza o build da aplicação para produção.
+- `lint`: Executa o ESLint para verificar problemas no código.
+- `preview`: Inicia um servidor para pré-visualizar o build de produção.
+
+Para executar qualquer um desses scripts, utilize o comando:
+
+```bash
+npm run <script>
+```
+
+## Como Executar o Projeto
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <url-do-repositorio>
+   cd dashboard-front
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse o projeto no navegador em [http://localhost:5173](http://localhost:5173).
+
+## Configuração de Ambiente
+
+Certifique-se de que a API está rodando no endereço [http://localhost:3000](http://localhost:3000), conforme configurado no arquivo `apiClient.ts`.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
