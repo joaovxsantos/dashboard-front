@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import type { dataDash, Order, User } from "../../../../types";
+
+import type { Order, User, dataDash } from '../../../types'
 import styles from './Card.module.scss';
-import { ApexChart } from "../../ApexChart/ApexChart";
+import { ApexChart } from "../ApexChart/ApexChart";
 import clsx from "clsx";
-import { CardUser } from "../../CardUser/CardUser";
+import { CardUser } from "../CardUser/CardUser";
 
 
 export function Card({ title, subtitle, icon, content, index }: dataDash) {

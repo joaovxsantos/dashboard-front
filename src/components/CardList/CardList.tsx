@@ -1,5 +1,5 @@
 import { dataDashBoard } from '../../dataDashBoard'
-import { Card } from './Card/Card'
+import { Card } from '../Card/Card'
 
 
 export function CardList() {

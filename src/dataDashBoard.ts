@@ -1,4 +1,4 @@
-import type { dataDash } from "../types";
+import type { dataDash} from "../types";
 import { orderService } from "./api/orderService";
 import { useService } from "./api/userService";
 
@@ -10,15 +10,14 @@ import {
   CircleDollarSign,
 } from "lucide-react";
 
-export const dataDashBoard: dataDash[] = [
+export const dataDashBoard: dataDash[]  = [
   {
     title: "Total vendas",
     subtitle: "Total vendas em 30 dias",
     icon: DollarSign,
     type: "order",
     content: async () => {
-      const response = await orderService.getOrdersMonth();
-      return response;
+      return await orderService.getOrdersMonth();
     },
   },
   {
@@ -27,8 +26,7 @@ export const dataDashBoard: dataDash[] = [
     icon: Users,
     type: "user",
     content: async () => {
-      const response = await useService.getUsersMonth();
-      return response;
+      return await useService.getUsersMonth();
     },
   },
   {
@@ -37,8 +35,7 @@ export const dataDashBoard: dataDash[] = [
     icon: Percent,
     type: "order",
     content: async () => {
-      const response = await orderService.getOrdersDay();
-      return response;
+      return await orderService.getOrdersDay();
     },
   },
   {
@@ -47,8 +44,7 @@ export const dataDashBoard: dataDash[] = [
     icon: Receipt,
     type: "order",
     content: async () => {
-      const response = await orderService.getOrdersMonth();
-      return response;
+      return await orderService.getOrdersMonth();
     },
   },
   {
@@ -56,13 +52,12 @@ export const dataDashBoard: dataDash[] = [
     icon: DollarSign,
   },
   {
-    title: "Ultimos clientes",
-    subtitle: "Novos clientes nas últimas 24horas",
+    title: "Últimos clientes",
+    subtitle: "Novos clientes nas últimas 24 horas",
     icon: CircleDollarSign,
     type: "user",
     content: async () => {
-      const response = await useService.getUsersDay();
-      return response;
+      return await useService.getUsersDay();
     },
   },
 ];

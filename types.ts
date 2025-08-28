@@ -6,7 +6,10 @@ export type dataDash = {
   icon: ElementType;
   type?: string;
   index?: number;
-  content?: string | ((user: User) => User[]);
+  content?:
+    | string
+    | ((user: User) => User[])
+    | (() => Promise<User[] | Order[]>);
 };
 
 export type User = {
