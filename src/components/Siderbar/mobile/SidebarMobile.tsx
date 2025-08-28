@@ -1,6 +1,6 @@
 import { BoxIcon, HomeIcon, Users, ShoppingBag, Settings, X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import styles from './SidebarMobile.module.scss';
+import styles from './SideBarMobile.module.scss'
 import clsx from "clsx";
 import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 
@@ -22,7 +22,7 @@ export default function SideBarMobile() {
     return (
         <header className={!isOpen ? styles["header-close"] : undefined}>
             <Menu className={styles["menu-icon"]} style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)} />
-            <DarkModeToggle className={styles["toggle-btn"]}/>
+            <DarkModeToggle className={styles["toggle-btn"]} />
             <nav className={clsx(styles["nav-sidebar"], isOpen ? styles.isOpen : styles.notIsOpen)}>
                 <X style={{ position: "absolute", right: "20px", top: 45, cursor: "pointer" }} onClick={() => setIsOpen(false)} />
                 <ul>
@@ -48,7 +48,7 @@ export default function SideBarMobile() {
                     <li>
                         <Settings />
                         Configurações</li>
-                        
+
                 </ul>
             </nav>
         </header>
